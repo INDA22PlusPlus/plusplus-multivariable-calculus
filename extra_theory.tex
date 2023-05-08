@@ -1,0 +1,42 @@
+\documentclass{report}
+
+\include{preamble}
+\include{macros}
+\include{letterfonts}
+
+\usepackage[Glenn]{fncychap}
+
+\title{\Huge{SF1626 Flervariabelanalys, bra formler}}
+\author{\huge{}}
+\date{}
+
+
+\begin{document}
+
+\maketitle
+\newpage
+\pagebreak
+
+\chapter{Satser, definitioner}
+\ex{När Jacobianen inte behövs!}
+{
+	Om man behöver beräkna ytintegralen eller även flödesintegralen av en kurva så behöver man inte lägga till Jacobianen!\\\\
+	
+	\textbf{Till exempel}: Om man vill beräkna ytan av kurvan som beskrivs som intersektionen av cylindern $ x^2+y^2 \le 1$ och ytan $x^2+z^2 = 1, \: z \ge 0$, så kan parametrisera kurvan på sättet nedan:
+	\begin{equation*}
+	\vec{r}(t) =
+	\begin{cases}
+		x &= rcos(t)\\
+		y &= rsin(t)\\
+		z &= \sqrt{1-r^2cos^2(t)}
+	\end{cases}
+	\end{equation*}
+	...$r \in [0,1], \:\: t \in [0, 2\pi]$. Om man då behöver beräkna ytan så gör man det på sättet nedan:
+	\begin{equation*}
+		\iint_Y \Bigl| \frac{\partial \vec{r}}{\partial r} \times \frac{\partial \vec{r}}{\partial t} \Bigr| \: drdt = \int_0^{2\pi}\int_0^1 \Bigl| \frac{\partial \vec{r}}{\partial r} \times \frac{\partial \vec{r}}{\partial t} \Bigr| \: drdt
+	\end{equation*}
+	Lägg märke på att Jacobianen inte lades till! Detta på grund att vi \textbf{inte} transformerar en areaelement från en koordinatsystem till en annan - eftersom vi från första början hade parametriserat kurvan i koordinatsystemet vi behöver för att beräkna ytan. Mer info: \href{https://math.stackexchange.com/questions/2388245/why-is-there-no-jacobian-in-the-definition-of-the-surface-integral-iint-ufds}{[1]} \href{https://math.stackexchange.com/a/2332951}{[2]}. 
+}
+
+
+\end{document}
