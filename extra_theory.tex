@@ -38,5 +38,24 @@
 	Lägg märke på att Jacobianen inte lades till! Detta på grund att vi \textbf{inte} transformerar en areaelement från en koordinatsystem till en annan - eftersom vi från första början hade parametriserat kurvan i koordinatsystemet vi behöver för att beräkna ytan. Mer info: \href{https://math.stackexchange.com/questions/2388245/why-is-there-no-jacobian-in-the-definition-of-the-surface-integral-iint-ufds}{[1]} \href{https://math.stackexchange.com/a/2332951}{[2]}. 
 }
 
+\thm{Gradientens definition}
+{
+	\begin{equation*}
+		\nabla F( \vec{a} ) = \lim_{t \to 0} \frac{ F(\vec{a} + t(e_1, e_2, e_3, \cdots, e_n) - F(\vec{a}) }{t}
+	\end{equation*}
+}
+
+\dfn{Tangentplan (linjär approximation) unmystified}
+{
+	I vissa uppgifter så kommer det att frågas om att bestämma en tangentplan i en viss punkt för en kurva som ges implicit, t.ex: $ cos(2z)(x^2+3y^2+z) = 0 $, detta kan tolkas som en 3D kurva. Då tangentplanen i en punkt $\vec{a} \in \mathbb{R}^n $, för en kurva $f = k$, $f : \mathbb{R}^n \mapsto \mathbb{R} $ ges av:
+	\begin{equation*}
+		\nabla 	f(\vec{a}) \cdot (\vec{x} - \vec{a})
+	\end{equation*}
+	..där $\vec{a} = (a_1, a_2, a_3, \cdots, a_n)$ och $\vec{x} = (x_1, x_2, x_3, \cdots, x_n)$. I $\mathbb{R}^3$ så blir $\vec{x} = (x,y,z) $.\\\\
+	
+	\textbf{Observera} att funktioner som $g(x,y) = z$ kan skrivas om implicit till $g(x,y) - z = 0$ för att använda denna metod.\\
+	Mer info: \href{https://math.stackexchange.com/a/2084635}{[1]}
+}
+
 
 \end{document}
