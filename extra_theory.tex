@@ -41,7 +41,7 @@
 \thm{Gradientens definition}
 {
 	\begin{equation*}
-		\nabla F( \vec{a} ) = \lim_{t \to 0} \frac{ F(\vec{a} + t(e_1, e_2, e_3, \cdots, e_n) - F(\vec{a}) }{t}
+		\nabla F( \vec{a} ) = \lim_{t \to 0} \frac{ F(\vec{a} + t(e_1, e_2, e_3, \cdots, e_n) - F(\vec{a})) }{t}
 	\end{equation*}
 }
 
@@ -55,6 +55,14 @@
 	
 	\textbf{Observera} att funktioner som $g(x,y) = z$ kan skrivas om implicit till $g(x,y) - z = 0$ för att använda denna metod.\\
 	Mer info: \href{https://math.stackexchange.com/a/2084635}{[1]}
+}
+
+\thm{Orienteringsidentitet på \textbf{vektorfälts}integral}
+{
+	\begin{equation*}
+		\ointctrclockwise_{\gamma} F \cdot d\vec{r} = -\varointctrclockwise_{\gamma} F \cdot d\vec{r} \iff \varointctrclockwise_{\gamma} F \cdot d\vec{r} = -\ointctrclockwise_{\gamma} F \cdot d\vec{r}
+	\end{equation*}
+	Mer info: \href{https://en.wikipedia.org/wiki/Vector_calculus_identities}{[1]}
 }
 
 
