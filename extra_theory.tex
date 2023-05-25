@@ -88,4 +88,28 @@
 	Mer info: \href{http://www.math.toronto.edu/courses/mat237y1/20189/notes/Chapter3/S3.3.html}{[1]}
 }
 
+\pagebreak
+
+\chapter{Bevis, bevistekniker}
+\bt{Bevis på att $D_{\vec{u}}f(\vec{a}) = \vec{u} \cdot \nabla f(\vec{a})$, (15/03/2022, fråga 6)}
+{
+	Låt $f : \mathbb{R}^n \mapsto \mathbb{R}$, $\vec{a} = (a_1, a_2, \cdots, a_n)$ och $\vec{u} = (u_1, u_2, \cdots, u_n)$. Då kan vi definiera $D_{\vec{u}}f(\vec{a})$ med ett gränsvärde på följande sätt:
+	\begin{equation*}
+		\lim_{t \to 0} \frac{ f(\vec{a} + t\vec{u})-f(\vec{a})}{t}
+	\end{equation*}
+	Låt oss definiera $g(t) = f(\vec{a} + t\vec{u})$, då kan vi skriva gränsvärdet ovan som:
+	\begin{equation*}
+		\lim_{t \to 0} \frac{g(t)-g(0)}{t} = \frac{dg}{dt}(0)
+	\end{equation*}
+	Det sista kan utvecklas vidare till:
+	\begin{align*}
+		\frac{dg}{dt} &= \frac{d}{dt}f(\vec{a} + t\vec{u})\\
+			      &= u_1 \frac{\partial f}{x_1} + u_2 \frac{\partial f}{x_2} + \cdots + u_n \frac{\partial f}{x_n}\\
+			      &= \vec{u} \cdot \bigl( \frac{\partial f}{x_1}, \frac{\partial f}{x_2}, \cdots, \frac{\partial f}{x_n} \bigr)\\
+			      &= \vec{u} \cdot \nabla f(\vec{a} + t\vec{u})
+	\end{align*}
+	..när man sätter $ t = 0$ i det sista så får vi $\vec{u} \cdot \nabla f(\vec{a})$. Alltså \textbf{V.S.B}!
+}
+
+
 \end{document}
