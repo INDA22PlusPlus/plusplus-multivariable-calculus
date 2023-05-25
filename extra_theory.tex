@@ -60,7 +60,7 @@
 \thm{Orienteringsidentitet på \textbf{vektorfälts}integral}
 {
 	\begin{equation*}
-		\ointctrclockwise_{\gamma} F \cdot d\vec{r} = -\varointctrclockwise_{\gamma} F \cdot d\vec{r} \iff \varointctrclockwise_{\gamma} F \cdot d\vec{r} = -\ointctrclockwise_{\gamma} F \cdot d\vec{r}
+		\ointctrclockwise_{\gamma} F \cdot d\vec{r} = -\ointclockwise_{\gamma} F \cdot d\vec{r} \iff \ointclockwise_{\gamma} F \cdot d\vec{r} = -\ointctrclockwise_{\gamma} F \cdot d\vec{r}
 	\end{equation*}
 	Mer info: \href{https://en.wikipedia.org/wiki/Vector_calculus_identities}{[1]}
 }
@@ -72,5 +72,20 @@
 	En rand\textbf{kurva} sägs vara \textbf{positiv} orienterad om ytan som randkurvan täcker är åt vänstra sidan när man följer orienteringen på kurvan. Tvärtom med negativ orientering på randkurvan.
 }
 
+
+\thm{Inversa funktionssatsen}
+{
+	Om vi har en funktion $f : \mathbb{R}^n \mapsto \mathbb{R}^n$ och vi betecknar Jacobianen av $f$ i punkten $\vec{a}$ som $Df(\vec{a})$, så är $f$ inverterbar i närheten av punkten $\vec{a}$ om $Df(\vec{a})$ är inverterbar, d.v.s:
+	\begin{equation*}
+		det(Df(\vec{a})) \ne 0
+	\end{equation*}
+	Dessutom så gäller identiteten:
+	\begin{equation*}
+		D(f^{-1})(\vec{y}) = [Df(\vec{x})]^{-1}
+	\end{equation*}
+	..där $ f(\vec{x}) = \vec{y} $\\\\
+	
+	Mer info: \href{http://www.math.toronto.edu/courses/mat237y1/20189/notes/Chapter3/S3.3.html}{[1]}
+}
 
 \end{document}
