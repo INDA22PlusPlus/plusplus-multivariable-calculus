@@ -111,5 +111,56 @@
 	..när man sätter $ t = 0$ i det sista så får vi $\vec{u} \cdot \nabla f(\vec{a})$. Alltså \textbf{V.S.B}!
 }
 
+\bt{Gradienten och nabla operatorn i polära koordinater (genom tillämpningen av kedjeregeln)}
+{
+	För att beräkna gradienten, så behöver vi en ortogonal koordinatsystem. I polära koordinater, brukar man definiera enhets-basvektorerna som beror beror på vinkeln $\theta$ som:
+	\begin{align*}
+		\boldsymbol{\hat{r}} &= \cos(\theta)\boldsymbol{\hat{e_1}}+\sin(\theta)\boldsymbol{\hat{e_2}}\\
+		\boldsymbol{\hat{\theta}} &= -\sin(\theta)\boldsymbol{\hat{e_1}} + \cos(\theta)\boldsymbol{\hat{e_2}}
+	\end{align*}
+	..där $\boldsymbol{\hat{e_1}}$ och $\boldsymbol{\hat{e_2}}$ är enhets-basvektorerna i standard (Kartesiska) koordinatsystem.\\\\
+	
+	Gradienten och nabla operatorn för en funktion $f : \mathbb{R}^2 \mapsto \mathbb{R}$ i termer av $x$ och $y$ definieras i termer av enhets-basvektorerna som:
+	\begin{equation*}
+		\nabla = \frac{\partial }{\partial x}\boldsymbol{\hat{e_1}}+\frac{\partial }{\partial y}\boldsymbol{\hat{e_2}} \implies \nabla f = \frac{\partial f}{\partial x}\boldsymbol{\hat{e_1}}+\frac{\partial f}{\partial y}\boldsymbol{\hat{e_2}}
+	\end{equation*}
+	En funktion $g : \mathbb{R}^2 \mapsto \mathbb{R}$ i termer av $r$ och $\theta$ beror av $x$ och $y$ eftersom:
+	\begin{align*}
+		r &= \sqrt{x^2+y^2}\\
+		\theta &= arctan\bigl(\frac{y}{x}\bigr)
+	\end{align*}
+	Därmed partiell derivering med avseende på $x$ eller $y$ på en funktion som är angiven i polära koordinater (beror på $r$ och $\theta$ som i sin tur beror på $x$ och $y$ ) kommer vara definierad på sättet nedan:
+	\begin{align*}
+		\frac{\partial }{\partial x} = \frac{\partial }{\partial r} \frac{\partial r}{\partial x} + \frac{\partial }{\partial \theta} \frac{\partial \theta}{\partial x}\\
+		\frac{\partial }{\partial y} = \frac{\partial }{\partial r} \frac{\partial r}{\partial y} + \frac{\partial }{\partial \theta} \frac{\partial \theta}{\partial y}
+	\end{align*}
+	Detta enligt kedjeregeln. $\frac{\partial r}{\partial x}, \frac{\partial \theta}{\partial x}, \frac{\partial r}{\partial y}, \frac{\partial \theta}{\partial y}$ kan då fås ut från definitionerna ovan, där $r(x,y) = \sqrt{x^2+y^2}$ och $\theta(x,y) = arctan\bigl(\frac{y}{x}\bigr)$:
+	\begin{align*}
+		\frac{\partial r}{\partial x} &= \frac{x}{\sqrt{x^2+y^2}} = \frac{r\cos(\theta)}{\sqrt{r^2}} = \cos(\theta) &\implies \frac{\partial }{\partial r} \frac{\partial r}{\partial x} &= \frac{\partial }{\partial r}\cos(\theta)\\
+		\frac{\partial \theta}{\partial x} &= -\frac{y}{x^2} \cdot \frac{1}{\frac{y^2}{x^2}+1} = -\frac{y}{x^2+y^2} = -\frac{r\sin(\theta)}{r^2} = - \frac{\sin(\theta)}{r} &\implies \frac{\partial }{\partial \theta} \frac{\partial \theta}{\partial x} &= -\frac{\partial }{\partial \theta} \frac{\sin(\theta)}{r}\\
+		\frac{\partial r}{\partial y} &= \frac{y}{\sqrt{x^2+y^2}} = \frac{r\sin(\theta)}{\sqrt{r^2}} = \sin(\theta) &\implies \frac{\partial }{\partial r} \frac{\partial r}{\partial y} &= \frac{\partial }{\partial r}\sin(\theta)\\
+		\frac{\partial \theta}{\partial y} &= \frac{1}{x} \cdot \frac{1}{\frac{y^2}{x^2}+1} = \frac{x}{x^2+y^2} = \frac{r\cos(\theta)}{\sqrt{r^2}} = \frac{\cos(\theta)}{r} &\implies \frac{\partial }{\partial \theta} \frac{\partial \theta}{\partial y} &= \frac{\partial }{\partial \theta} \frac{\cos(\theta)}{r}
+	\end{align*}
+	Om vi följer definitionen för gradienten och nabla operatorn i standard koordinatsystemet och definitionerna av $\frac{\partial}{\partial x}$ och $\frac{\partial}{\partial y}$ för polära funktioner så får vi att:
+	\begin{equation*}
+		\nabla = \bigl(\frac{\partial }{\partial r}\cos(\theta)-\frac{\partial }{\partial \theta} \frac{\sin(\theta)}{r}\bigr)\boldsymbol{\hat{e_1}} + \bigl( \frac{\partial }{\partial r}\sin(\theta) + \frac{\partial }{\partial \theta} \frac{\cos(\theta)}{r} \bigr)\boldsymbol{\hat{e_2}}
+	\end{equation*}
+	Men vi vill använda de polära basvektorerna istället för $\boldsymbol{\hat{e_1}}$ och $\boldsymbol{\hat{e_2}}$. Vi kan bryta ut $\boldsymbol{\hat{e_1}}$ och $\boldsymbol{\hat{e_2}}$ i termer av $\boldsymbol{\hat{r}}$ och $\boldsymbol{\hat{\theta}}$:
+	\begin{align*}
+		\boldsymbol{\hat{e_1}} &= \cos(\theta)\boldsymbol{\hat{r}} - \sin(\theta)\boldsymbol{\hat{\theta}}\\
+		\boldsymbol{\hat{e_2}} &= \sin(\theta)\boldsymbol{\hat{r}} + \cos(\theta)\boldsymbol{\hat{\theta}}
+	\end{align*}
+	Då blir nabla operatorn i polära koordinater och med polära basvektorer:
+	\begin{align*}
+	\nabla &= \bigl(\frac{\partial }{\partial r}\cos(\theta)-\frac{\partial }{\partial \theta} \frac{\sin(\theta)}{r}\bigr)\bigl(\cos(\theta)\boldsymbol{\hat{r}} - \sin(\theta)\bigr) + \bigl( \frac{\partial }{\partial r}\sin(\theta) + \frac{\partial }{\partial \theta} \frac{\cos(\theta)}{r} \bigr)\bigl(\sin(\theta)\boldsymbol{\hat{r}} + \cos(\theta)\bigr)\\
+		&= \cdots\\
+		&= \frac{\partial}{\partial r}\boldsymbol{\hat{r}} + \frac{1}{r}\frac{\partial}{\partial \theta}\boldsymbol{\hat{\theta}}
+	\end{align*}
+	Därmed gradienten för en funktion $h$ i polära koordinater blir:
+	\begin{equation*}
+		\nabla h = \frac{\partial h}{\partial r}\boldsymbol{\hat{r}} + \frac{1}{r}\frac{\partial h}{\partial \theta}\boldsymbol{\hat{\theta}}
+	\end{equation*}
+}
+
 
 \end{document}
