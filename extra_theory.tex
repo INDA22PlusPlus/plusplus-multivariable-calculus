@@ -88,6 +88,23 @@
 	Mer info: \href{http://www.math.toronto.edu/courses/mat237y1/20189/notes/Chapter3/S3.3.html}{[1]}
 }
 
+\dfn{Linjäriseing för en funktion $f : \mathbb{R}^n \mapsto \mathbb{R}$}
+{
+Linjäriseringen av en funktion $f$ i en punkt $\vec{a}$ kan beskrivas på sättet nedan:
+\begin{equation*}
+	L(\vec{x})_{\vec{a}} = f(\vec{a}) + \nabla f_{\vec{a}} \cdot (\vec{x}-\vec{a})
+\end{equation*}
+}
+
+\dfn{Differentierbarhet för funktioner $f : \mathbb{R}^n \mapsto \mathbb{R}$}
+{
+Observera att differentierbarhet inte är samma sak som deriverbar! Differentierbarheten för funktionen $f$ i en punkt $\vec{a}$ definieras som:
+\begin{equation*}
+\lim_{\vec{h} \to \vec{0}} \frac{f(\vec{a}+\vec{h})-L(\vec{a}+\vec{h})}{||h||} = 0
+\end{equation*}
+..alltså att linjäriseringen för funktionen går mot det riktiga värdet av funktionen. 
+}
+
 \pagebreak
 
 \chapter{Bevis, bevistekniker}
