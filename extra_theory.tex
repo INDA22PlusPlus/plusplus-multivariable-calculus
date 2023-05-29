@@ -105,6 +105,30 @@ Observera att differentierbarhet inte är samma sak som deriverbar! Differentier
 ..alltså att linjäriseringen för funktionen går mot det riktiga värdet av funktionen. 
 }
 
+\dfn{Greens sats med alla villkor}
+{
+	Låt $D$ vara en en sluten och begränsad (kompakt) mängd i $\mathbb{R}^2$, där randkurvan $\gamma$ till $D$ består av en eller flera stängda styckvis kontinuerligt deriverbara kurvor (\textit{en.} piecewise smooth). Alltså att randkurvorna är deriverbara överallt förutom i vissa punkter, som kan tolkas som hörn till kurvorna. Randkurvorna ska då vara positivt orienterade med avseende på $D$. Låt vektorfältet $F$ vara $C^1$ i hela $D$, då gäller följande:
+	\begin{equation*}
+		\oint_{\gamma} F_1(x,y)dx + F_2(x,y)dy = \iint_D \bigl(\frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y}\bigr) dA
+	\end{equation*}
+}	
+
+\dfn{Divergenssatsen (Gauss sats) med alla villkor}
+{
+	Låt $D$ vara en sluten och begränsad (kompakt) mängd i $\mathbb{R}^3$, där randytan $S$ är stängd och positivt orienterad (normalen pekar ut från $D$) med enhetsnormalfältet $\hat{N}$. Låt också vektorfältet $F$ vara $C^1$ i hela $D$, då gäller följande:
+	\begin{equation*}
+		\iiint_D \nabla \cdot F dV = \oiint_S F \cdot \hat{N} dS
+	\end{equation*}
+}
+
+\dfn{Stokes sats med alla villkor}
+{
+	Låt $D$ vara en styckvis glatt yta i $\mathbb{R}^3$ med randkurvan $\gamma$. Låt $D$ ha enhetsnormalfältet $\hat{N}$. Låt randkurvan $\gamma$ bestå av en eller flera stängda styckvis kontinuerligt deriverbara kurvor som är positivt orienterade med hänsyn till $D$. Låt vektorfältet $F$ vara $C^1$ och definierad på $D$, då gäller följande:
+	\begin{equation*}
+		\oint_{\gamma} F \cdot d\vec{r} = \iint_D (\nabla \times F) \cdot \hat{N} dS
+	\end{equation*}
+}
+
 \pagebreak
 
 \chapter{Bevis, bevistekniker}
